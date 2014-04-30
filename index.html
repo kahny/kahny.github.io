@@ -1,1 +1,108 @@
-Bye
+<!DOCTYPE html>
+<head>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<!--googlefont for the top of the page-->
+	<link href='http://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
+
+	<!--Sends alert for phone number when clicking on th phone icon-->
+	<script type="text/javascript">
+
+	function myPhone(){
+		alert("# : 408-838-7835")
+	}
+
+	var images = ["http://i.imgur.com/DhCq2yq.png", "http://i.imgur.com/evkJSgl.png","http://i.imgur.com/EtROTuN.png","http://i.imgur.com/guqKLKJ.png","http://i.imgur.com/vNDBYbG.png", "http://i.imgur.com/WItKZyA.png","http://i.imgur.com/eMHodaz.png"]
+
+	var i=0
+	var length = images.length; 
+	var intervalid = window.setInterval(function(){
+		if (i<length){
+			document.getElementById('div6').innerHTML = "<img width='450' height='450' src='"+images[i]+"'>";
+			i++;
+		}
+		else if(i==length){
+			document.getElementById('div6').innerHTML = "<img width='450' height='450' src='"+images[0]+"'>";
+			i=1;	
+		}
+	},1000)
+
+	//window.setinterval(function())
+	</script>	
+</head>
+<body>
+	<div id="div1" class="center">
+			<h1>about&nbsp me</h1>
+			<p>
+				After graduating from Cal and working in the finance/accounting area for about three years, I’ve become more and more certain that I am ready for a career change. Working with a wide variety of departments within my current company, and just even talking to my friends has made me realize the importance of aiming for a job where you find the challenges most rewarding and the work most interesting. 
+
+				Although I’m still just beginning, I believe my interest in these courses along with talking to my friends at work who are web developers has made me want to become a developer myself. I want to be able to create something useful from scratch, use more problem solving skills, and see the results of my work.
+			</p>
+
+	</div>
+
+	<div id="div2" class="center">
+		
+			<img src="img/35c.png" height="290.64" width="495" alt="monkeys" id="monkey">
+			<figcaption >		
+				<a href="https://github.com/kahny"><img src="img/github.png"></a>
+			
+				<a href="https://instagram.com/kahny"><img src="img/instagram.png"></a>
+				<a href="mailto:conniechang89@gmail.com"><img src="img/email.png"></a>
+				<img onclick="myPhone()"src="img/phone.png">
+				<a href="https://linkedin.com/in/cchang4" class="icon"><img src="img/linkedin2.png"></a>	
+			</figcaption>
+	
+
+	</div>
+
+
+
+	
+	<div id="div4" class="center">
+		<img src="http://i.imgur.com/hfKsabk.png" height="250">	
+	</div>
+
+
+	<div id="div5" class="center">
+			<img src="img/animalstyle.png" alt="animalstyle" height="400" width="400">
+			<figcaption>Raised bay area, I love all things Californian and a few things not specific to California. The image carousel to the right shows my favorite parts of SF as well as my pet Chinchilla</figcaption> 
+
+	</div>
+
+	<div id="div6" class="center">
+		<img src="http://i.imgur.com/aovpVfD.png" height="450"width="450">
+
+	</div>
+
+
+
+<script type="text/javascript">
+	var carouselActive = true;
+	document.getElementById('div6').onclick=function(){
+		if(carouselActive){
+			window.clearInterval(intervalid);
+			carouselActive = false;
+		} 
+		else {
+			intervalid = window.setInterval(function(){
+				if (i<length){
+					document.getElementById('div6').innerHTML = "<img width='450' height='450' src='"+images[i]+"'>";
+					i++;
+				}
+				else if(i==length){
+					document.getElementById('div6').innerHTML = "<img width='450' height='450' src='"+images[0]+"'>";
+					i=1;	
+				}
+			},1000)
+			carouselActive=true;
+		};
+	}
+</script>
+
+</body>
+
+
+
+<!--rounded corner-->
