@@ -1,13 +1,13 @@
 html,body {
-	height:100%; 
 	font-family: helvetica, sans-serif;
-	text-align:center; /*added this to center the first divs*/
   }
-.center{	
-	margin: 0 auto ;/*added this to center bottom 2/3 of the page*/
-}
 
-  
+/*center the container div on the page*/
+#container{
+  width: 1015px ;
+  margin-left: auto;
+  margin-right:auto;
+ } 
 
  p{
   color:rgba(0,0,0,1);
@@ -21,87 +21,133 @@ html,body {
 	display:inline-block;
 	background:yellow; 
 	width:500px;
-	
-	border:solid black;
-	
+	border:solid black;	
 }
+
 #div2{
 	display:inline-block;
 	background:white;
-	width:500px;
+	width:498px;
 	border:dashed black;
-	padding:55px 0px 30px 0;
-
-
-
-}
-#div3{
-	display:inline-block;
-	background:white;
-	
+	padding:40px 0px 30px 0;
+	text-align:center;
 }
 
 #div4 { 
 	background: #04FFD1;
 	padding:30px 0px;
 	width:1015px;
-
+	text-align:center;
 }
+
 #div5 { 
 	display:inline-block;
-	background:black;
+	background: black;
 	width:500px;
 	color:#04FFD1;
+	padding:22px 3px ;
+	text-align:center;
 }
 
 
 #div6{
 	display:inline-block;
-	
+	background: repeating-linear-gradient(
+  	45deg,
+ 	#605dbc,
+  	#605dbc 20px,
+  	#465298 20px,
+  	#465298 40px
+);
+	background-size: cover;
 	width:500px;	
+	padding:22px 2.5px ;
+	color:white;
+	text-align:center;
 }
 
-/*
-#div6 { 
-	background: #04FFD1 url("http://i.imgur.com/WjMzaM0.jpg");
-	background-size:cover;
-	background-position: 0px 1240px;
-}
-*/
-
+/*invert the icons colors when hovering over*/
 .icon:hover{
-	 background:white;
-
+	 -webkit-filter : invert(100%);
 }
-
 
 h1{
 	font-family: 'Bevan', 'cursive';
 	font-size:70px;
 	margin: 0 0 -20px 10px;
 	background:yellow;
-
 }
 
-@media (max-width:1000px){
+/*when screen width less than 1030px, do the followng:*/
+@media (max-width:1030px){
 	h1{
 		font-size:40px;
 	}
 	#div1{
-		width: auto;
+		width: 700px;
 	}
 	#div2{
-		width: auto;
+		width: 700px;
 	}
 	#div4{
-		 width: auto;
-
+		 width: 700px;
 	}
+
+	#container{
+  width: 700px ;
+  margin-left: auto;
+  margin-right:auto;
+ } 
 	p{
 		font-size:20px;
 		line-height:30px;
 	}
+	#div5{
+		width:694px;
+	}
+	#div6{
+		width:695px;
+	}
 }
 
-/*the following decreases the header, decreases the middle div by half, and increases the paragraph text font-size 
+/*when screen width less than 700px, do the followng:*/
+@media (max-width:700px){
+
+	#container{
+		width:auto;
+		margin-left: auto;
+ 	 	margin-right:auto;
+	}
+
+	#div1{
+		width:auto;
+	}
+	#div2{
+		width:auto;
+		display:block;
+		/*display block centered it, but unlike the others it doesn't stay centered automatically?*/
+
+	}
+	#div4{
+		width:auto;
+	}
+	#div5{
+		width:auto;
+	}
+	#div6{
+		width:auto;
+	}
+}
+
+/*when screen width less than 500px, do the followng:*/
+@media(max-width:500px){
+	img{
+		width:80%;
+		height:80%;
+	}
+	.iconphoto{
+	width:15%;
+	}
+}
+
 
