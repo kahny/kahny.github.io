@@ -5,6 +5,7 @@
 	<!--googlefont for the top of the page-->
 	<link href='http://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
 	
+
 	<script type="text/javascript">
 		//Sends alert for phone number when clicking on the phone icon below the monkeys
 		function myPhone(){
@@ -32,8 +33,23 @@
 
 		//sets a new photo every 1.5s 
 		var intervalid = window.setInterval(setphotos,1500)
+		var carouselActive = true;
 
-		
+		//pauses and resumes the carousel upon clicking
+	window.onload = function() {document.getElementById('div5').onclick=function(){
+		if(carouselActive){
+			window.clearInterval(intervalid);
+			carouselActive = false;
+		} 
+		else {
+			intervalid = window.setInterval(setphotos,1500);
+			carouselActive=true;
+		};
+	}
+}
+
+
+	
 	</script>	
 </head>
 
@@ -71,18 +87,8 @@
 			<figcaption>Here are some photos of my favorite places and my pet Chinchilla. <span>Click to start/stop the image carousel</span></figcaption>
 		</div>
 	</div>
-	<script>
-	//If you click on the image, it will pause and restart it on each click. 
-		var carouselActive = true;
-		document.getElementById('div5').onclick=function(){
-			if(carouselActive){
-				window.clearInterval(intervalid);
-				carouselActive = false;
-			} 
-			else {
-				window.setInterval(setphotos,1500);
-				carouselActive=true;
-			};
-		}
-	</script>
+	
+<script type="text/javascript">
+</script>
+
 </body>
