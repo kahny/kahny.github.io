@@ -33,18 +33,7 @@
 		//sets a new photo every 1.5s 
 		var intervalid = window.setInterval(setphotos,1500)
 
-		//If you click on the image, it will pause and restart it on each click. 
-		var carouselActive = true;
-		document.getElementById('div5').onclick=function(){
-			if(carouselActive){
-				window.clearInterval(intervalid);
-				carouselActive = false;
-			} 
-			else {
-				window.setInterval(setphotos,1500)
-				carouselActive=true;
-			};
-		}
+		
 	</script>	
 </head>
 
@@ -53,7 +42,7 @@
 		<div id="div1">
 				<h1>about&nbsp me</h1>
 				<p>
-					Hi, I'm Connie! I graduated from Cal in 2011 with a degree in Business Administration and have been working in the finance/accounting field almost 3 years. I'm looking to change to a career where I find the challenges most rewarding and the work most interesting. I want to be able to create something useful from scratch, use more problem solving skills, and see the results of my work. I've taken some graphic design, HTML/CSS, Javascript, and Intro to Programming(Java) courses around the city. In my classes I spent the most time on my Javascript class and found myself most interested by the work that involves problem solving, so I'm pursuing the full stack knowledge and a web developer career.
+					Hi, I'm Connie! I graduated from Cal in 2011 with a degree in Business Administration and have been working in the finance/accounting field for almost 3 years. I'm looking to change to a career where I find the challenges most rewarding and the work most interesting. I want to be able to create something useful from scratch, use more problem solving skills, and see the results of my work. I've taken some graphic design, HTML/CSS, Javascript, and Intro to Programming(Java) courses around the city. In my classes I spent the most time on my Javascript class and found myself most interested by the work that involves problem solving, so I'm pursuing the full stack knowledge and a web developer career.
 				</p>
 		</div>
 
@@ -82,4 +71,18 @@
 			<figcaption>Here are some photos of my favorite places and my pet Chinchilla. <span>Click to start/stop the image carousel</span></figcaption>
 		</div>
 	</div>
+	<script>
+	//If you click on the image, it will pause and restart it on each click. 
+		var carouselActive = true;
+		document.getElementById('div5').onclick=function(){
+			if(carouselActive){
+				window.clearInterval(intervalid);
+				carouselActive = false;
+			} 
+			else {
+				window.setInterval(setphotos,1500);
+				carouselActive=true;
+			};
+		}
+	</script>
 </body>
