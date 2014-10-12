@@ -1,94 +1,328 @@
-<!DOCTYPE html>
+<html>
 <head>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
-	
-	<!--googlefont for the top of the page-->
-	<link href='http://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
-	
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-	<script type="text/javascript">
-		//Sends alert for phone number when clicking on the phone icon below the monkeys
-		function myPhone(){
-			alert("# : 408-838-7835")
-		}
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-		//This is the image array and function related to the image carousel, will switch through photos every 1.5 seconds  
-		var images = ["http://i.imgur.com/DhCq2yq.png", "http://i.imgur.com/evkJSgl.png","http://i.imgur.com/EtROTuN.png","http://i.imgur.com/guqKLKJ.png","http://i.imgur.com/vNDBYbG.png", "http://i.imgur.com/WItKZyA.png","http://i.imgur.com/eMHodaz.png", "http://i.imgur.com/aovpVfD.png"]
-		var i=0
-		var length = images.length; 
-
-		//setphotos will place the image into div5
-		function setphotos(){
-			//while you still haven't reached the end of the array, keep displaying the photos and adding one to the count
-			if (i<length){
-				document.getElementById('div5').innerHTML = "<img width='450' height='450' src='"+images[i]+"'><figcaption>Here are some photos of my favorite places and my pet Chinchilla. Click to start/stop the image carousel</figcaption>";
-				i++;
-			}
-			//once you have gone through the whole array, start again from the first image in the array
-			else if(i==length){
-				document.getElementById('div5').innerHTML = "<img width='450' height='450' src='"+images[0]+"'><figcaption>Here are some photos of my favorite places and my pet Chinchilla. Click to start/stop the image carousel</figcaption>";
-				i=1;	
-			}
-		}
-
-		//sets a new photo every 1.5s 
-		var intervalid = window.setInterval(setphotos,1500)
-		var carouselActive = true;
-
-		//pauses and resumes the carousel upon clicking
-	window.onload = function() {document.getElementById('div5').onclick=function(){
-		if(carouselActive){
-			window.clearInterval(intervalid);
-			carouselActive = false;
-		} 
-		else {
-			intervalid = window.setInterval(setphotos,1500);
-			carouselActive=true;
-		};
-	}
-}
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
 
-	
-	</script>	
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <!-- stylesheet -->
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+  <!-- fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
+
+  <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+
+  <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
 </head>
-
 <body>
-	<div id="container"><!-- all encompasing container-->
-		<div id="div1">
-				<h1>about&nbsp me</h1>
-				<p>
-					Hi, I'm Connie! I graduated from Cal in 2011 with a degree in Business Administration and have been working in the finance/accounting field for almost 3 years. I'm looking to change to a career where I find the challenges most rewarding and the work most interesting. I want to be able to create something useful from scratch, use more problem solving skills, and see the results of my work. I've taken some graphic design, HTML/CSS, Javascript, and Intro to Programming(Java) courses around the city. In my classes I spent the most time on my Javascript class and found myself most interested by the work that involves problem solving, so I'm pursuing the full stack knowledge and a web developer career.
-				</p>
-		</div>
 
-		<div id="div2">
-				<img src="img/monkey.gif" height="290.64" width="495" alt="monkeys" id="monkey"><br><br>
-				<figcaption>
-					<a href="https://github.com/kahny" class="icon"><img src="img/github.png"  class="iconphoto"></a>	
-					<a href="https://instagram.com/kahny" class="icon"><img src="img/instagram.png" class="iconphoto"></a>
-					<a href="mailto:conniechang89@gmail.com" class="icon"><img src="img/email.png"class="iconphoto"></a>
-					<img onclick="myPhone()"src="img/phone.png" class="icon iconphoto">
-					<a href="https://linkedin.com/in/cchang4" class="icon"><img src="img/linkedin2.png"class="iconphoto"></a>	
-				</figcaption>
-		</div>
+  <div class="container-fluid">
+    <div class="row nav-bar">
+      <div class="col-sm-12 text-right ">
+        <span class="glyphicon glyphicon-asterisk"></span>
+        <a href="" data-toggle="modal" data-target="#modal7">About</a>
+        <span class="glyphicon glyphicon-asterisk"></span>
+        <a href="" data-toggle="modal" data-target="#modal8">Contact</a>
+        <span class="glyphicon glyphicon-asterisk"></span>
+        <a href="https://github.com/kahny">Github</a>
+        <span class="glyphicon glyphicon-asterisk"></span>
+        <a href="" data-toggle="modal" data-target="#modal6">Resume</a>
+        <span class="glyphicon glyphicon-asterisk"></span>
+      </div>
+    </div>
+    <div class="row header">
+      <div class="col-sm-10 col-sm-offset-1">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1 class="header">Connie Chang</h1>
+          </div>
+          <div class="col-sm-9">
+            <h3 class="header-1">Full-Stack Web Developer</h3>
+          </div>
+        </div>
+      </div>
+    </div>
 
-		<div id="div3">
-			<img src="http://i.imgur.com/hfKsabk.png" height="250">	
-		</div>
+    <div class="row header-3 projects">
+      <div class="col-sm-10 col-sm-offset-1">
+        <div class="row">
+          <div class="col-sm-12">
+            <!-- <h1>Projects</h1> -->
+          </div>
+        </div>
+        <div class="row">
+          <!-- trying out modal -->
+          <div class="col-sm-4 tile" data-toggle="modal" data-target="#modal1">
+            <h4 class="header-small">TV Party</h4>
+            <img src="images/tv-party-standard.png">
+          </div>
 
-		<div id="div4">
-				<img src="http://i.imgur.com/xA9R4bn.png" alt="animalstyle" height="450" width="450">
-				<figcaption >Raised in the bay area, I love all things Californian (YES Animal-Style fries!!), and maybe a few things not specific to California.</figcaption> 
-		</div>
+          <div class="col-sm-4 tile" data-toggle="modal" data-target="#modal2">
+            <h4 class="header-small">Backyard App</h4>
+            <img src="images/backyardapp-standard.png">
+          </div>
+          <div class="col-sm-4 tile" data-toggle="modal" data-target="#modal3">
+            <h4 class="header-small">Sounddrop</h4>
+            <img src="images/sounddrop-standard.png">
+          </div>
+        </div>
 
-		<div id="div5">
-			<img src="http://i.imgur.com/aovpVfD.png" height="450"width="450">
-			<figcaption>Here are some photos of my favorite places and my pet Chinchilla. <span>Click to start/stop the image carousel</span></figcaption>
-		</div>
-	</div>
-	
-<script type="text/javascript">
-</script>
+        <div class="row">
+          <div class="col-sm-4 col-sm-offset-2 tile" data-toggle="modal" data-target="#modal4">
+            <h4 class="header-small">To Do List</h4>
+            <img src="images/to-do-standard.png">
+          </div>
+          <div class="col-sm-4 tile" data-toggle="modal" data-target="#modal5">
+            <h4 class="header-small">Shape Visualizer</h4>
+            <img src="images/shape-visualizer-standard.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="row footer">
+    <div class="col-sm-10 col-sm-offset-1">
+      <div class="col-sm-2">
+        <img src="http://i.imgur.com/hfKsabk.png" height="120">
+      </div>
+      <div class="col-sm-8">
+        <p><span style="font-weight: bold">Languages: </span>HTML, CSS, JavaScript, Ruby</p>
+        <p><span style="font-weight: bold">Frameworks: </span>Node.js, Express, Rails, AngularJS</p>
+        <p><span style="font-weight: bold">Interests: </span>Graphic Design, Music, Photography, Lightweight-hiking, Chinchillas </p>
+        <span class="glyphicon glyphicon-asterisk"></span>
+        <a href="" data-toggle="modal" data-target="#modal7">About</a>
+        <span class="glyphicon glyphicon-asterisk"></span>
+        <a href="" data-toggle="modal" data-target="#modal8">Contact</a>
+        <span class="glyphicon glyphicon-asterisk"></span>
+        <a href="https://github.com/kahny">Github</a>
+        <span class="glyphicon glyphicon-asterisk"></span>
+        <a href="" data-toggle="modal" data-target="#modal6">Resume</a>
+        <span class="glyphicon glyphicon-asterisk"></span>
+      </div>
+      <div class="col-sm-2">
+
+      </div>
+    </div>
+  </div>
+
+<!-- Modal for tv-party-->
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h2 class="modal-title" id="myModalLabel">TV-Party</h2>
+
+      </div>
+      <div class="modal-body">
+
+        <p>Chat about your favorite TV shows while you view the related twitter feed. Built with Node.js, Socket.io, Passport, Twitter Oauth, and uses Hulu's popular shows as seed data. This was a weeklong two person project completed in Sept. 2014.</p>
+        <a href="http://tv-party.herokuapp.com/">Live Site>></a>
+        <a href="https://github.com/smonette/tv-party">Github>></a>
+        <br><br>
+        <img src="images/tv-party.png" class="modal-img">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal for backyard app-->
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h2 class="modal-title" id="myModalLabel">Backyard App</h2>
+
+      </div>
+      <div class="modal-body">
+
+        <p>Taking inspiration from Airbnb, the purpose of the site is to recreate a booking site where people can rent out their backyards and pools. Built with Ruby, Rails, Mapbox API, Javascript, jQuery, AJAX, Bootstrap, Handlebars, Rspec, web scraping with Nokogiri, and data seeding with Ffaker. This was a week long four person group project completed in Sept. 2014.</p>
+        <a href="http://backyardapp.herokuapp.com/">Live Site>></a>
+        <a href="https://github.com/kahny/groupproject">Github>></a>
+        <br><br>
+        <img src="images/backyard-app.png" class="modal-img">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal for sounddrop-->
+<div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h2 class="modal-title" id="myModalLabel">Sounddrop</h2>
+
+      </div>
+      <div class="modal-body">
+
+        <p>Search for songs on Soundcloud and create your own playlists using hashtags. Built with Node.js, Express, Soundcloud API, PostgreSQL, Sequelize, and Passport for authentication and authorization. This was a week long solo project in Aug. 2014.</p>
+
+        <a href="http://sounddrop.herokuapp.com/">Live Site>></a>
+        <a href="https://github.com/kahny/soundcloud-playlists-as-tags">Github>></a>
+        <br><br>
+        <img src="images/sounddrop-homepage.png" class="modal-img">
+        <img src="images/sounddrop-tag.png" class="modal-img">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for sounddrop-->
+<div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h2 class="modal-title" id="myModalLabel">Sounddrop</h2>
+
+      </div>
+      <div class="modal-body">
+
+        <p>Search for songs on Soundcloud and create your own playlists using hashtags. Built with Node.js, Express, Soundcloud API, PostgreSQL, Sequelize, and Passport for authentication and authorization. This was a week long solo project in Aug. 2014.</p>
+
+        <a href="http://sounddrop.herokuapp.com/">Live Site>></a>
+        <a href="https://github.com/kahny/soundcloud-playlists-as-tags">Github>></a>
+        <br><br>
+        <img src="images/sounddrop-homepage.png" class="modal-img">
+        <img src="images/sounddrop-tag.png" class="modal-img">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for to-do-list -->
+<div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h2 class="modal-title" id="myModalLabel">To-Do List</h2>
+
+      </div>
+      <div class="modal-body">
+        <p>A to-do list built with Rails, and AngularJS.</p>
+        <a href="http://to-do-ta-da.herokuapp.com/">Live Site>></a>
+        <a href="https://github.com/kahny/to-do-list">Github>></a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for to-do-list -->
+<div class="modal fade" id="modal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h2 class="modal-title" id="myModalLabel">Shape Visualizer</h2>
+
+      </div>
+      <div class="modal-body">
+        <p>A music visualizer which spins different shapes you can select based on the average volume of the frequencies. This was built using Canvas, Paper.js, and the Soundcloud API.</p>
+        <a href="https://github.com/kahny/long_weekend_lab">Github>></a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Resume -->
+<div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h2 class="modal-title" id="myModalLabel"> </h2>
+
+      </div>
+      <div class="modal-body">
+        <img src="images/resume.png" class="modal-img">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact -->
+<div class="modal fade" id="modal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h2 class="modal-title" id="myModalLabel">Contact</h2>
+
+      </div>
+      <div class="modal-body">
+        <span class="glyphicon glyphicon-phone">(408)838-7835</span>
+        <span class="glyphicon glyphicon-envelope">conniechang89@gmail.com</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About -->
+<div class="modal fade" id="modal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h2 class="modal-title" id="myModalLabel">About Me </h2>
+
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-3 text-center">
+             <img src="http://i.imgur.com/hfKsabk.png" height="125">
+          </div>
+          <div class="col-sm-9">
+            <p>I graduated from U.C. Berkeley with a degree in Business Administration and began my career in accounting/finance, but am so happy to be coding now! My proudest accomplishments are now the apps I've built over just the last few months, so I’m excited to continue on learning and building. I hope to be part of a collaborative team and take on challenging tasks.</p>
+            <p><span style="font-weight: bold">Languages: </span>HTML, CSS, JavaScript, Ruby</p>
+            <p><span style="font-weight: bold">Frameworks: </span>Node.js, Express, Rails, AngularJS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 </body>
+</html>
