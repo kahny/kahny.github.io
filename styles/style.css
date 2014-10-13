@@ -71,3 +71,19 @@
   display:inline;
 }
 
+
+.blah{
+  font-size: 20px;
+  cursor: pointer;
+
+}
+
+.link{
+  color:white;
+}
+
+.link:hover{
+  color: #04FFD1;
+  text-decoration: underline;
+  cursor: pointer;
+}
