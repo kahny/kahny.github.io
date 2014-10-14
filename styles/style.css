@@ -28,7 +28,8 @@
 .footer {
   color:white;
   background-color: rgba(24,24,24,1);
-  padding:5px;
+  padding:50px 0px;
+  margin-top:50px;
 
 }
 
@@ -64,7 +65,7 @@
   font-family: 'Merriweather', serif;
 }
 
-.nav-bar{
+.header-nav-bar{
   background-color: rgba(24,24,24,1);
   color:white;
   font-family: 'Lato', sans-serif;
@@ -94,4 +95,9 @@
   cursor: pointer;
 }
 
+.footer-nav{
+  font-size: 20px;
+  cursor:pointer;
+  font-family: 'Lato', sans-serif;
+}
 
